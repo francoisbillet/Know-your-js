@@ -1,0 +1,30 @@
+{
+  "name": "ability_tests",
+  "version": "0.1.0",
+  "description": "Collection of various problems designed to test a developer's profiency on given subjects.",
+  "main": "index.js",
+  "scripts": {
+    "test:kyj": "jest --noStackTrace",
+    "test:watch:kyj": "jest --watch --noStackTrace"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hubvisory-source/ability_tests.git"
+  },
+  "author": "Guillaume Mantopoulos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hubvisory-source/ability_tests/issues"
+  },
+  "homepage": "https://github.com/hubvisory-source/ability_tests#readme",
+  "devDependencies": {
+    "chalk": "^4.1.0",
+    "jest": "^26.6.3",
+    "jest-silent-reporter": "^0.5.0"
+  },
+  "jest": {
+    "reporters": [
+      "<rootDir>/reporter.js"
+    ]
+  }
+}
