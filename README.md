@@ -24,5 +24,5 @@ The idea here is for the candidate to go through most of the test. It's okay not
   - Proficiency while writing code / thinking in javascript
   - Confidence of the candidate when providing an answer, before seeing the test results
 
-NB: On the "Common Higher Order Functions" tests, if the candidate uses simple loops and outer scope variables, you should challenge him to finder other ways to do it.
+NB: On the "Higher Order Functions" tests, if the candidate uses simple loops and outer scope variables, you should challenge him to finder other ways to do it.
 The goal is to test his knowledge of functions such as forEach, find, map, filter and reduce.
