@@ -3,13 +3,11 @@ module.exports = () => {
     // doSomethingAsync contains errors. Fix them
     // so that the second test becomes successful
     const doSomethingAsync = () => {
-      return new Promise(() => {
-        return "hello, world!";
-      });
-    };
+      return Promise.resolve("hello, world!");
+      };
 
     // Find the expected value
-    expect(doSomethingAsync()).toBeInstanceOf(_);
+    expect(doSomethingAsync()).toBeInstanceOf(Promise);
 
     // Fix doSomethingAsync to make this pass
     doSomethingAsync().then((value) => {
@@ -44,10 +42,10 @@ module.exports = () => {
       catchSomethingAsync("hell"),
       catchSomethingAsync("fail"),
     ]).then(([x, y, z]) => {
-      expect(x).toEqual(_);
-      expect(y).toEqual(_);
-      expect(z).toEqual(_);
-      expect(console.log.mock.calls[0][0]).toBe(_); // First log
+      expect(x).toEqual("pass");
+      expect(y).toEqual("unknown");
+      expect(z).toEqual("error");
+      expect(console.log.mock.calls[0][0]).toBe("fail"); // First log
       done();
     });
   });

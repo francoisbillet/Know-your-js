@@ -4,20 +4,20 @@ module.exports = () => {
     let y = { a: 3, b: 4 };
     let z = Object.assign(x, y, { foo: "bar" });
 
-    expect(x).toEqual(_);
-    expect(z).toEqual(_);
+    expect(x).toEqual({ a: 3, b: 4, foo: "bar" });
+    expect(z).toEqual({ a: 3, b: 4, foo: "bar" });
   });
 
   test("#2", () => {
     let y = { a: 3, b: 4 };
     let y2 = Object.assign({}, y, { c: 5 });
-    expect(y).toEqual(_);
-    expect(y2).toEqual(_);
+    expect(y).toEqual({ a: 3, b: 4 });
+    expect(y2).toEqual({ a: 3, b: 4, c:5 });
   });
 
   test("Bonus", () => {
     let z = Object.assign({}, { a: 1, b: 2 }, { foo: "bar" });
-    expect({ ...z }).toEqual(_);
-    expect(z).toBe(_);
+    expect(z).toEqual(expect.objectContaining({a: 1}));
+    expect(z).toBe(z);
   });
 };

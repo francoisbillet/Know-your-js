@@ -8,8 +8,8 @@ module.exports = () => {
         return this.foo;
       },
     };
-    expect(x.callMe()).toBe(_);
-    expect(x.callMe.call({ foo: "fou?" })).toBe(_);
+    expect(x.callMe()).toBe("foo");
+    expect(x.callMe.call({ foo: "fou?" })).toBe("fou?");
   });
 
   test("#2", () => {
@@ -25,7 +25,7 @@ module.exports = () => {
       },
     };
 
-    expect(x.callMe()).toBe(_);
-    expect(x.callMeInstead()).toBe(_);
+    expect(x.callMe()).toBe("bip"); // Nani ? line 11 ?
+    expect(x.callMeInstead()).toBe("bar");
   });
 };

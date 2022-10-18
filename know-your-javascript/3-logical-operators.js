@@ -9,17 +9,17 @@ module.exports = () => {
     } else {
       a = "salty...";
     }
-    expect(a).toBe(_);
+    expect(a).toBe("Sweet !");
   });
 
   test("#2", () => {
     expect(x.toLowerCase() === "hello, world!" && y > 3 ? "bip" : "boop").toBe(
-      _
+      "bip"
     );
   });
 
   test("#3", () => {
-    expect(y && "hey").toBe(_);
-    expect(y - 3.14 || x).toBe(_);
+    expect(y && "hey").toBe("hey");
+    expect(y - 3.14 || x).toBe("Hello, world!");
   });
 };

@@ -1,7 +1,14 @@
 module.exports = () => {
   test("#1", () => {
     // Write a class that makes the test pass
-    // _
+    class Dog {
+      constructor(name) {
+        this.name = name.toUpperCase();
+      }
+      bark() {
+        return 'Woof !'
+      }
+    }
 
     const myDog = new Dog("Snoopy");
     expect(myDog.name).toEqual("SNOOPY");
@@ -24,11 +31,16 @@ module.exports = () => {
 
     class Cat extends Animal {
       constructor(color, name, age) {
-        _;
+        super(name, age);
+        this.color = color;
+      }
+      makeNoise() {
+        return 'meow';
       }
     }
 
-    const myCat = _; // Instantiate the cat class
+
+    const myCat = new Cat("Black", "jojo", 12); // Instantiate the cat class
 
     // Complete the "Cat" class so that these tests pass
     expect(myCat.color).toEqual("Black");

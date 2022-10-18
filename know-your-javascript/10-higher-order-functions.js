@@ -3,7 +3,7 @@ module.exports = () => {
     console.log = jest.fn();
     const arr = ["One", "Two", "Three"];
 
-    // Write missing code so that the test passes
+    arr.forEach(element => console.log(element));
 
     expect(console.log.mock.calls[0][0]).toBe("One"); // First log
     expect(console.log.mock.calls[1][0]).toBe("Two"); // Second Log
@@ -18,7 +18,7 @@ module.exports = () => {
     ];
 
     // Write the code required for the test to pass
-    const upsideDownAdults = _;
+    const upsideDownAdults = arr.filter(element => element.age > 18).map(element => ({"eman": element.name.split('').reverse().join(''), age: element.age}));
 
     // Hint to reverse names:
     // a javascript array has the .reverse() function available...
@@ -38,7 +38,18 @@ module.exports = () => {
       { name: "Maya", country: "Spain" },
     ];
 
-    const result = _;
+    const result = arr.reduce((previousValue, currentValue) => {
+      const countryLowerCase = currentValue.country.toLowerCase();
+      if (!previousValue[countryLowerCase]) {
+          previousValue[countryLowerCase] = [currentValue.name];
+      }
+      else {
+          previousValue[countryLowerCase].push(currentValue.name)
+      }
+      return previousValue;
+    }, {});
+
+    Object.values(result).forEach(array => array.sort());
 
     expect(result).toEqual({
       france: ["Camille", "Louis", "Paul"],

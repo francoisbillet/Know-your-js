@@ -14,7 +14,7 @@ module.exports = () => {
 
     hoist();
 
-    expect(console.log.mock.calls[0][0]).toBe(_); // First log
-    expect(console.log.mock.calls[1][0]).toBe(_); // Second Log
+    expect(console.log.mock.calls[0][0]).toBe(undefined); // First log
+    expect(console.log.mock.calls[1][0]).toBe("Error"); // Second Log
   });
 };

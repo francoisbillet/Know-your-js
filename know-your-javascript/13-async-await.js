@@ -4,7 +4,7 @@ module.exports = () => {
       return "hello, world !";
     };
 
-    expect(_).toBeInstanceOf(Promise);
-    expect(_).toEqual("hello, world !");
+    expect(somethingAsync()).toBeInstanceOf(Promise);
+    expect(await somethingAsync()).toEqual("hello, world !");
   });
 };

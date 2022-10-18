@@ -13,14 +13,14 @@ module.exports = () => {
     const x = "foo";
     const z = changeSomething(x);
 
-    expect(x).toEqual(_);
-    expect(z).toEqual(_);
+    expect(x).toEqual("foo");
+    expect(z).toEqual("foobar");
   });
 
   test("#2", () => {
     const y = { foo: "foo" };
     const b = changeSomething(y);
-    expect(y).toEqual(_);
-    expect(b).toEqual(_);
+    expect(y).toEqual({ foo: "bar"});
+    expect(b).toEqual({ foo: "bar"});
   });
 };
