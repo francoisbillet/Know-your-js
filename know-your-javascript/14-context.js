@@ -9,7 +9,7 @@ module.exports = () => {
       },
     };
     expect(x.callMe()).toBe("foo");
-    expect(x.callMe.call({ foo: "fou?" })).toBe("fou?");
+    expect(x.callMe.call({ foo: "fou?" })).toBe("fou?"); // call() redefines the context
   });
 
   test("#2", () => {
@@ -25,7 +25,7 @@ module.exports = () => {
       },
     };
 
-    expect(x.callMe()).toBe("bip"); // Nani ? line 11 ?
+    expect(x.callMe()).toBe("bip"); // Anonymous functions don't have contexts, only the global one
     expect(x.callMeInstead()).toBe("bar");
   });
 };
